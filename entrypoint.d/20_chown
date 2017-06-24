@@ -1,0 +1,2 @@
+#!/bin/sh
+chown -R ${CONTAINER_USER}:${CONTAINER_GROUP} "$CONTAINER_HOME"

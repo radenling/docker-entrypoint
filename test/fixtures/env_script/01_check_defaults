@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "env"
+echo $CONTAINER_USER
+echo $CONTAINER_GROUP
+echo $CONTAINER_UID
+echo $CONTAINER_GID
+echo $CONTAINER_HOME
+echo $CONTAINER_COMMAND

@@ -1,0 +1,2 @@
+#!/bin/sh
+exec su-exec $CONTAINER_USER $CONTAINER_COMMAND

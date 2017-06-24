@@ -1,0 +1,4 @@
+#!/bin/sh
+addgroup -g $CONTAINER_GID $CONTAINER_GROUP
+adduser -s /sbin/nologin -h $CONTAINER_HOME \
+        -D -u $CONTAINER_UID -G $CONTAINER_GROUP $CONTAINER_USER
