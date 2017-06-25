@@ -1,17 +1,18 @@
 #!/bin/sh
 
 set -e
-shopt -s nullglob
 
 run_scripts () {
   local directory=$1; shift
   if [ -d "$directory" -a -n "$(ls -A "$directory")" ]; then
     local last_file=$(echo "${directory}"/* | sed 's/.* \(.*\)$/\1/')
     for f in "${directory}"/*; do
-      if [ "$last_file" = "$f" ]; then
-        exec sh "$f"
-      else
-        sh "$f"
+      if [ -f "$f" ]; then
+        if [ "$last_file" = "$f" ]; then
+          exec sh "$f"
+        else
+          sh "$f"
+        fi
       fi
     done
   fi
